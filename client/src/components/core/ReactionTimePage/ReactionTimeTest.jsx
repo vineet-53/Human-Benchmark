@@ -45,7 +45,7 @@ export default function ReactionTimeTest() {
     return (
       <div
         className="select-none text-white cursor-pointer bg-blue-200 h-full flex flex-col gap-3 justify-center items-center text-4xl"
-        onClick={handleRestart}
+        onMouseDown={handleRestart}
       >
         <div>{`${stopTimeRef.current - startTimeRef.current}ms`}</div>
         <div>Click To Test Again...</div>
@@ -56,17 +56,21 @@ export default function ReactionTimeTest() {
     return (
       <div
         className="text-white select-none cursor-pointer bg-caribbeangreen-200 h-full flex flex-col gap-3 justify-center items-center text-3xl"
-        onClick={() => {
+        onMouseDown={() => {
           console.log("Stopped timer");
           handleStop();
         }}
-      ></div>
+      >
+        <div className="font-extrabold text-5xl flex flex-col gap-3 text-center">
+          <span>Click Now!</span>
+        </div>
+      </div>
     );
   }
   return (
     <div
       className="select-none cursor-pointer bg-pink-200 text-white h-full flex flex-col gap-3 justify-center items-center text-3xl"
-      onClick={() => {
+      onMouseDown={() => {
         if (!earlyClick) {
           handleEarlyClick();
         } else {

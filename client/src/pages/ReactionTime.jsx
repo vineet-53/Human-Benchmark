@@ -20,10 +20,10 @@ export default function ReactionTime() {
   }
   return (
     <div
-      className="select-none cursor-pointer flex flex-col gap-3 justify-center items-center "
+      className="text-center select-none cursor-pointer flex flex-col gap-3 h-full justify-center items-center "
       onClick={handleStart}
     >
-      <div className="py-16 flex flex-col justify-center items-center gap-3">
+      <div className="flex flex-col justify-center items-center gap-3">
         <Logo
           name={data.icon}
           styles={"text-[150px] hover:text-pure-greys-25 text-white"}
