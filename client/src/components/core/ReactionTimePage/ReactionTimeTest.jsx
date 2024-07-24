@@ -4,20 +4,25 @@ export default function ReactionTimeTest() {
   const [status, setStatus] = useState(false);
   const timerRef = useRef(null);
   const [result, setResult] = useState(false);
+  const startTimeRef = useRef(null);
+  const stopTimeRef = useRef(null);
   const [earlyClick, setEarlyClick] = useState(false);
+
   const resetTimer = () => {
     clearInterval(timerRef.current);
     timerRef.current = null;
   };
   const attachTimer = () => {
-    const seconds = 5;
+    const seconds = 10;
     let randomTime = Math.ceil(Math.random() * seconds);
     resetTimer();
     timerRef.current = setTimeout(() => {
       setStatus(true);
+      startTimeRef.current = Date.now();
     }, randomTime * 1000);
   };
   const handleStop = () => {
+    stopTimeRef.current = Date.now();
     resetTimer();
     setResult(true);
   };
@@ -42,7 +47,7 @@ export default function ReactionTimeTest() {
         className="select-none text-white cursor-pointer bg-blue-200 h-full flex flex-col gap-3 justify-center items-center text-4xl"
         onClick={handleRestart}
       >
-        <div>Results</div>
+        <div>{`${stopTimeRef.current - startTimeRef.current}ms`}</div>
         <div>Click To Test Again...</div>
       </div>
     );
