@@ -1,3 +1,3 @@
-export default Container() {
-  return <div></div>
+export default function Container({ children, styles }) {
+  return <div className={` w-full ${styles} `}>{children}</div>;
 }
