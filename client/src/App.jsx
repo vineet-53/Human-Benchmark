@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "./pages/Dashboard.jsx";
 import Navbar from "./components/core/Navbar.jsx";
 import ReactionTime from "./pages/ReactionTime.jsx";
@@ -10,7 +10,7 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<Navigate to="/reaction-time-tester" />} />
         <Route
           path="/reaction-time-tester"
           element={
