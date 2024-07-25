@@ -8,6 +8,7 @@ export default {
       mono: ["Roboto Mono", "monospace"],
     },
     colors: {
+      primary: "#9600ff",
       extreme: {
         green: "#00ff33",
         red: "#ff0004",

@@ -6,7 +6,7 @@ import VocabularyTest from "../components/core/VocabularyTesterPage/VocabularyTe
 export default function VocabularyTester() {
   const data = pages.data[2];
   return (
-    <TestPage data={{ ...data }}>
+    <TestPage data={{ ...data }} startButton={true}>
       <VocabularyTest />
     </TestPage>
   );
