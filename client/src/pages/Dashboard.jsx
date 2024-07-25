@@ -4,7 +4,7 @@ export default function Dashboard({ children }) {
   return (
     <>
       <div className="min-h-screen  grid grid-rows-7 grid-cols-1">
-        <Container styles="bg-richblue-300 row-span-3">{children}</Container>
+        <Container styles="bg-extreme-blue row-span-3">{children}</Container>
         <Container styles="bg-white row-span-4 py-20 flex justify-center items-center">
           <CardsContainer />
         </Container>
