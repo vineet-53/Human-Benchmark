@@ -1,7 +1,9 @@
 import { useEffect, useState, useRef } from "react";
-import { FaClock } from "react-icons/fa";
+import { FaClock, FaRegSadCry } from "react-icons/fa";
 import { PiMouseLeftClickFill } from "react-icons/pi";
-import { RxDotsHorizontal } from "react-icons/rx";
+import Result from "../../common/Pages/Result";
+import PageTestContainer from "../../common/Pages/PageTestContainer";
+import WaitingLoader from "../../common/Loader/ResponseTimePage/WaitingLoader";
 
 export default function ReactionTimeTest() {
   const [status, setStatus] = useState(false);
@@ -46,35 +48,29 @@ export default function ReactionTimeTest() {
 
   if (result) {
     return (
-      <div
-        className="select-none text-white cursor-pointer bg-extreme-blue h-full flex flex-col gap-3 justify-center items-center text-4xl"
-        onMouseDown={handleRestart}
-      >
-        <FaClock size={70} />
+      <Result onMouseDown={handleRestart} styles={"select-none cursor-pointer"}>
+        <FaClock size={80} />
         <div>{`${stopTimeRef.current - startTimeRef.current} ms`}</div>
         <div>Click to keep going...</div>
-      </div>
+      </Result>
     );
   }
   if (status) {
     return (
-      <div
-        className="text-white select-none cursor-pointer bg-extreme-green h-full flex flex-col gap-3 justify-center items-center text-3xl"
-        onMouseDown={() => {
-          console.log("Stopped timer");
-          handleStop();
-        }}
+      <PageTestContainer
+        onMouseDown={handleStop}
+        styles={"text-3xl bg-extreme-green"}
       >
         <div className="  items-center font-extrabold text-5xl flex flex-col gap-3 text-center">
           <PiMouseLeftClickFill size={70} />
           <span>Click Now!</span>
         </div>
-      </div>
+      </PageTestContainer>
     );
   }
   return (
-    <div
-      className="select-none cursor-pointer bg-extreme-red text-white h-full flex flex-col gap-3 justify-center items-center text-3xl"
+    <PageTestContainer
+      styles={"select-none cursor-pointer bg-extreme-red text-3xl"}
       onMouseDown={() => {
         if (!earlyClick) {
           handleEarlyClick();
@@ -86,15 +82,16 @@ export default function ReactionTimeTest() {
     >
       {earlyClick ? (
         <div className="font-bold text-4xl items-center flex flex-col gap-3 text-center">
+          <FaRegSadCry size={70} />
           <span>Early Clicked.</span>
           <span>Click again to restart</span>
         </div>
       ) : (
-        <div className="font-bold text-5xl flex flex-col items-center ">
-          <RxDotsHorizontal size={170} className={"font-extrabold"} />
+        <div className="font-bold text-4xl flex flex-col items-center ">
+          <WaitingLoader styles={"text-white text-3xl font-bold"} />
           <span className="">Wait for Green Light....</span>
         </div>
       )}
-    </div>
+    </PageTestContainer>
   );
 }

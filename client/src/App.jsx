@@ -5,6 +5,7 @@ import Navbar from "./components/core/Navbar.jsx";
 import ReactionTime from "./pages/ReactionTime.jsx";
 import MemoryRetention from "./pages/MemoryRetention.jsx";
 import VocabularyTester from "./pages/VocabularyTester.jsx";
+import Error from "./pages/Error.jsx";
 function App() {
   return (
     <>
@@ -35,6 +36,7 @@ function App() {
             </Dashboard>
           }
         />
+        <Route path={"/*"} element={<Error />} />
       </Routes>
     </>
   );
