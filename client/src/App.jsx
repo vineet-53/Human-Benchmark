@@ -19,7 +19,9 @@ function App() {
             </Dashboard>
           }
         />
-        <Route
+        {/*
+
+              <Route
           path="/memory-retention"
           element={
             <Dashboard>
@@ -34,7 +36,10 @@ function App() {
               <VocabularyTester />
             </Dashboard>
           }
+
         />
+ */}
+
         <Route path={"/*"} element={<Error />} />
       </Routes>
     </>
