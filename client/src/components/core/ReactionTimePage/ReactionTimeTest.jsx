@@ -3,7 +3,7 @@ import { FaClock, FaRegSadCry } from "react-icons/fa";
 import { PiMouseLeftClickFill } from "react-icons/pi";
 import Result from "../../common/Pages/Result";
 import PageTestContainer from "../../common/Pages/PageTestContainer";
-import WaitingLoader from "../../common/Loader/ResponseTimePage/WaitingLoader";
+import WaitingLoader from "../../common/Loader/ReactionTimePage/WaitingLoader";
 
 export default function ReactionTimeTest() {
   const [status, setStatus] = useState(false);
@@ -59,7 +59,7 @@ export default function ReactionTimeTest() {
     return (
       <PageTestContainer
         onMouseDown={handleStop}
-        styles={"text-3xl bg-extreme-green"}
+        styles={"text-3xl bg-extreme-green cursor-pointer select-none"}
       >
         <div className="  items-center font-extrabold text-5xl flex flex-col gap-3 text-center">
           <PiMouseLeftClickFill size={70} />

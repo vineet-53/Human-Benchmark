@@ -1,11 +1,10 @@
-import "./App.css";
-import { Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "./pages/Dashboard.jsx";
 import Navbar from "./components/core/Navbar.jsx";
 import ReactionTime from "./pages/ReactionTime.jsx";
 import MemoryRetention from "./pages/MemoryRetention.jsx";
 import VocabularyTester from "./pages/VocabularyTester.jsx";
 import Error from "./pages/Error.jsx";
+import { Navigate, Route, Routes } from "react-router-dom";
 function App() {
   return (
     <>

@@ -1,9 +1,9 @@
-import useStartTest from "../../../hooks/useStartTest";
+import { useTestContext } from "../../../contexts/TestContextProvider";
 import TestTemplate from "./TestTemplate";
 
 export default function TestPage({ data, children, startButton = false }) {
   const { icon, title, desc } = data;
-  const { test, handleStart } = useStartTest(false);
+  const { test, handleStop, handleStart } = useTestContext();
   if (test) {
     return children;
   }
