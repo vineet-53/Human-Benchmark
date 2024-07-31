@@ -30,7 +30,6 @@ export default function MemoryRetentionTest() {
   };
 
   const highlightDiv = () => {
-    // console.log("INDEX VALUE:-", index);
     if (index < answers.length) {
       let [row, col] = answers[index];
       if (row && col) {
@@ -75,14 +74,12 @@ export default function MemoryRetentionTest() {
 
   const checkAnswerPattern = (rowIndex, colIndex) => {
     if (!enableButtonRef.current) {
-      console.log("RESET THE STAGE");
       resetGame();
       return;
     }
     if (correctIndex.current < answers.length) {
       const [row, col] = answers[correctIndex.current];
       if (row === rowIndex && col === colIndex) {
-        console.log("correct");
         if (correctIndex.current == answers.length - 1) {
           proceedToNextLevel();
         } else {
