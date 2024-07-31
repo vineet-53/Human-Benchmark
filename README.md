@@ -1,4 +1,4 @@
-# Human-Benchmark [Live](https://human-benchmark-k7gnvljb1-vineet-53s-projects.vercel.app/)
+# Human-Benchmark [Live](https://human-benchmark-pi.vercel.app/)
 
 Test your real time benchmarks
 
