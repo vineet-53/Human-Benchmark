@@ -2,6 +2,6 @@
 
 Test your real time benchmarks
 
-- Reaction Time ✅
-- Vocabulary [ ]
-- Pattern / Memory Retention [ ]
+- [X] Reaction Time or Response Time Tester
+- [ ] Vocabulary
+- [ ] Pattern / Memory Retention
